@@ -1816,6 +1816,186 @@
       }
     }
 
+  
+    /* =========================================================
+       VYRON — AJUSTE FINAL DEFINITIVO DA LOGO
+       Tamanho profissional: visível, sofisticado e sem cortar demais.
+    ========================================================= */
+
+    header{
+      background:linear-gradient(180deg,rgba(0,0,0,.86),rgba(1,7,3,.72)) !important;
+      border-bottom:1px solid rgba(182,255,38,.14) !important;
+      box-shadow:0 22px 80px rgba(0,0,0,.42) !important;
+    }
+
+    .nav{
+      height:88px !important;
+      align-items:center !important;
+    }
+
+    .brand,
+    .brand-god,
+    .brand-upgraded{
+      gap:16px !important;
+      align-items:center !important;
+    }
+
+    .brand-logo-shell,
+    .brand-logo-slot{
+      width:68px !important;
+      height:68px !important;
+      min-width:68px !important;
+      flex:0 0 68px !important;
+      padding:0 !important;
+      border-radius:18px !important;
+      overflow:hidden !important;
+      border:1px solid rgba(182,255,38,.34) !important;
+      background:
+        radial-gradient(circle at 50% 42%,rgba(182,255,38,.20),transparent 48%),
+        linear-gradient(135deg,rgba(182,255,38,.11),rgba(255,255,255,.025)) !important;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.04) inset,
+        0 0 28px rgba(182,255,38,.18),
+        0 16px 54px rgba(0,0,0,.42) !important;
+    }
+
+    .brand-logo-img{
+      width:100% !important;
+      height:100% !important;
+      padding:0 !important;
+      margin:0 !important;
+      display:block !important;
+      object-fit:cover !important;
+      object-position:center center !important;
+      transform:scale(1.72) translateY(-1px) !important;
+      transform-origin:center center !important;
+      filter:
+        brightness(1.18)
+        contrast(1.08)
+        saturate(1.06)
+        drop-shadow(0 0 10px rgba(182,255,38,.22)) !important;
+    }
+
+    .brand-word strong,
+    .brand-text strong{
+      font-size:1.75rem !important;
+      line-height:.95 !important;
+      letter-spacing:-.06em !important;
+      color:#fff !important;
+    }
+
+    .brand-word small,
+    .brand-text small{
+      display:block !important;
+      margin-top:6px !important;
+      color:var(--green) !important;
+      font-size:.58rem !important;
+      letter-spacing:.18em !important;
+      font-weight:950 !important;
+      text-transform:uppercase !important;
+      opacity:.85 !important;
+    }
+
+    .hero{
+      padding-top:138px !important;
+    }
+
+    .hero::before{
+      top:106px !important;
+    }
+
+    .hero::after{
+      top:118px !important;
+    }
+
+    @media(max-width:1020px){
+      .nav{
+        height:84px !important;
+      }
+
+      .brand-logo-shell,
+      .brand-logo-slot{
+        width:64px !important;
+        height:64px !important;
+        min-width:64px !important;
+        flex-basis:64px !important;
+        border-radius:17px !important;
+      }
+
+      .brand-logo-img{
+        transform:scale(1.78) translateY(-1px) !important;
+      }
+
+      .brand-word strong,
+      .brand-text strong{
+        font-size:1.62rem !important;
+      }
+
+      .brand-word small,
+      .brand-text small{
+        font-size:.54rem !important;
+      }
+
+      .hero{
+        padding-top:128px !important;
+      }
+    }
+
+    @media(max-width:620px){
+      .container{
+        width:min(100% - 28px,1180px) !important;
+      }
+
+      .nav{
+        height:82px !important;
+      }
+
+      .brand,
+      .brand-god,
+      .brand-upgraded{
+        gap:14px !important;
+      }
+
+      .brand-logo-shell,
+      .brand-logo-slot{
+        width:60px !important;
+        height:60px !important;
+        min-width:60px !important;
+        flex-basis:60px !important;
+        border-radius:17px !important;
+      }
+
+      .brand-logo-img{
+        transform:scale(1.82) translateY(-1px) !important;
+      }
+
+      .brand-word strong,
+      .brand-text strong{
+        font-size:1.42rem !important;
+      }
+
+      .brand-word small,
+      .brand-text small{
+        display:none !important;
+      }
+
+      .hero{
+        padding-top:118px !important;
+      }
+
+      .hero::before{
+        top:94px !important;
+      }
+
+      .hero::after{
+        top:104px !important;
+      }
+
+      h1{
+        font-size:3.05rem !important;
+      }
+    }
+
   </style>
 </head>
 <body>
