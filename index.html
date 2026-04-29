@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vyron — Portfólio de sites premium</title>
+  <meta name="description" content="Portfólio Vyron com landing pages premium, projetos reais e sites estratégicos focados em autoridade, estética e conversão." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#020403;
+      --bg-2:#050807;
+      --card:#080d0c;
+      --card-2:#0c1210;
+      --text:#f5f7f2;
+      --muted:#9ca6a2;
+      --muted-2:#68726e;
+      --line:rgba(255,255,255,.095);
+      --line-2:rgba(180,255,38,.28);
+      --green:#b6ff26;
+      --green-2:#78d600;
+      --white:#ffffff;
+      --radius:24px;
+      --shadow:0 30px 90px rgba(0,0,0,.58);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 78% 8%,rgba(182,255,38,.14),transparent 22%),
+        radial-gradient(circle at 18% 18%,rgba(255,255,255,.045),transparent 18%),
+        linear-gradient(180deg,var(--bg),#030604 42%,#020403 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+      background-image:
+        linear-gradient(rgba(255,255,255,.032) 1px, transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.032) 1px, transparent 1px);
+      background-size:72px 72px;
+      mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 78%);
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      background:
+        radial-gradient(circle at center,transparent 0%,rgba(0,0,0,.35) 58%,rgba(0,0,0,.78) 100%);
+    }
+
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font-family:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
+
+    .noise{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      opacity:.17;
+      mix-blend-mode:soft-light;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+    }
+
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:50;
+      background:rgba(2,4,3,.72);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:26px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:13px;
+      font-weight:900;
+      letter-spacing:-.045em;
+      font-size:1.42rem;
+    }
+
+    .brand-mark{
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      position:relative;
+    }
+
+    .brand-mark i{
+      position:absolute;
+      width:34px;
+      height:10px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--green),#dcff84);
+      box-shadow:0 0 28px rgba(182,255,38,.42);
+    }
+
+    .brand-mark i:first-child{transform:rotate(42deg)}
+    .brand-mark i:last-child{transform:rotate(-42deg)}
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:30px;
+      color:#c2cbc6;
+      font-size:.86rem;
+      font-weight:700;
+    }
+
+    .nav-links a{
+      opacity:.74;
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{opacity:1;color:var(--green)}
+
+    .nav-actions{display:flex;align-items:center;gap:12px}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:46px;
+      padding:0 18px;
+      border-radius:12px;
+      border:1px solid transparent;
+      font-size:.82rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.025em;
+      cursor:pointer;
+      transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease,color .22s ease;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background:var(--green);
+      color:#071006;
+      box-shadow:0 20px 60px rgba(182,255,38,.22);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 26px 80px rgba(182,255,38,.34);
+    }
+
+    .btn-outline{
+      border-color:var(--line);
+      background:rgba(255,255,255,.035);
+      color:#edf3ef;
+    }
+
+    .btn-outline:hover{
+      border-color:var(--line-2);
+      color:var(--green);
+      transform:translateY(-2px);
+    }
+
+    .hero{
+      position:relative;
+      padding:136px 0 54px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:.94fr 1.06fr;
+      gap:58px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--green);
+      font-size:.76rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:24px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:8px;height:8px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 0 7px rgba(182,255,38,.105),0 0 26px rgba(182,255,38,.6);
+    }
+
+    h1{
+      font-size:clamp(3.3rem,6.4vw,6.35rem);
+      line-height:.91;
+      letter-spacing:-.082em;
+      font-weight:950;
+      max-width:760px;
+      margin-bottom:26px;
+    }
+
+    h1 span{
+      color:var(--green);
+      text-shadow:0 0 36px rgba(182,255,38,.22);
+    }
+
+    .lead{
+      color:#c2cbc6;
+      font-size:1.12rem;
+      line-height:1.78;
+      max-width:615px;
+      margin-bottom:32px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:36px;
+    }
+
+    .mini-proof{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:13px;
+      max-width:610px;
+    }
+
+    .proof-pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      border-radius:14px;
+      padding:13px 14px;
+      color:var(--muted);
+      font-size:.82rem;
+      font-weight:700;
+    }
+
+    .proof-pill strong{display:block;color:var(--white);font-size:.92rem;margin-bottom:3px}
+
+    .visual{
+      position:relative;
+      min-height:535px;
+    }
+
+    .visual-glow{
+      position:absolute;
+      right:6%;
+      bottom:4%;
+      width:420px;
+      height:220px;
+      background:radial-gradient(ellipse,rgba(182,255,38,.24),transparent 67%);
+      filter:blur(25px);
+      transform:rotate(-8deg);
+    }
+
+    .device{
+      position:relative;
+      z-index:2;
+      border:1px solid rgba(255,255,255,.17);
+      background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+      border-radius:24px;
+      padding:12px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .device-top{
+      height:38px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      border-bottom:1px solid var(--line);
+      margin:-12px -12px 12px;
+      padding:0 14px;
+      background:rgba(255,255,255,.035);
+    }
+
+    .dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.24)}
+
+    .screen{
+      min-height:382px;
+      border-radius:17px;
+      border:1px solid rgba(255,255,255,.085);
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.34)),
+        radial-gradient(circle at 82% 42%,rgba(182,255,38,.16),transparent 26%),
+        linear-gradient(135deg,#101715,#040605);
+      overflow:hidden;
+      position:relative;
+      padding:28px;
+    }
+
+    .screen::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:38px 38px;
+      mask-image:linear-gradient(120deg,rgba(0,0,0,.7),transparent 65%);
+    }
+
+    .screen-content{position:relative;z-index:2;max-width:64%}
+
+    .mock-logo{height:18px;width:154px;border-radius:30px;background:linear-gradient(90deg,#fff 0 24%,rgba(255,255,255,.18) 24%);margin-bottom:58px}
+    .mock-title{height:38px;border-radius:6px;background:#fff;margin-bottom:11px}.mock-title.one{width:100%}.mock-title.two{width:76%;background:var(--green)}
+    .mock-line{height:10px;border-radius:30px;background:rgba(255,255,255,.23);margin-top:18px}.mock-line.a{width:78%}.mock-line.b{width:55%}
+    .mock-button{width:176px;height:45px;background:var(--green);border-radius:9px;margin-top:28px;box-shadow:0 0 35px rgba(182,255,38,.25)}
+
+    .code-card{
+      position:absolute;
+      z-index:4;
+      left:-20px;
+      bottom:35px;
+      width:268px;
+      border:1px solid rgba(182,255,38,.22);
+      border-radius:18px;
+      background:rgba(5,9,8,.82);
+      backdrop-filter:blur(16px);
+      padding:16px;
+      box-shadow:0 25px 70px rgba(0,0,0,.55);
+    }
+
+    .code-row{height:10px;border-radius:30px;background:rgba(255,255,255,.14);margin-bottom:10px}
+    .code-row:nth-child(1){width:84%;background:rgba(182,255,38,.42)}
+    .code-row:nth-child(2){width:62%}
+    .code-row:nth-child(3){width:92%}
+    .code-row:nth-child(4){width:48%;background:rgba(182,255,38,.22)}
+
+    .phone{
+      position:absolute;
+      right:-12px;
+      bottom:30px;
+      width:154px;
+      height:286px;
+      z-index:5;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:30px;
+      background:#040706;
+      padding:10px;
+      box-shadow:0 24px 70px rgba(0,0,0,.7);
+    }
+
+    .phone-inner{
+      height:100%;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.075);
+      background:linear-gradient(180deg,#101614,#040605);
+      padding:18px 13px;
+    }
+
+    .phone-line{height:10px;border-radius:20px;background:#fff;margin-bottom:10px}.phone-line.x{width:78%}.phone-line.y{width:55%;background:var(--green)}
+    .phone-copy{height:7px;border-radius:20px;background:rgba(255,255,255,.2);margin-top:13px}.phone-copy.small{width:65%}
+    .phone-cta{height:34px;border-radius:8px;background:var(--green);margin-top:28px}
+
+    .metrics{
+      margin-top:42px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.032);
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .metric{
+      padding:29px 32px;
+      border-right:1px solid var(--line);
+    }
+
+    .metric:last-child{border-right:0}
+    .metric strong{font-size:1.65rem;letter-spacing:-.045em;color:#fff}
+    .metric span{display:block;color:var(--muted);font-size:.82rem;margin-top:7px;line-height:1.45}
+
+    section{padding:88px 0}
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:40px;
+      margin-bottom:36px;
+    }
+
+    .kicker{
+      color:var(--green);
+      font-size:.76rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      margin-bottom:14px;
+    }
+
+    .title{
+      font-size:clamp(2.25rem,4.3vw,4.45rem);
+      line-height:.98;
+      letter-spacing:-.065em;
+      font-weight:950;
+      max-width:820px;
+    }
+
+    .subtitle{
+      color:var(--muted);
+      line-height:1.75;
+      max-width:430px;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .service{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.022));
+      border-radius:18px;
+      padding:25px;
+      min-height:230px;
+      position:relative;
+      overflow:hidden;
+      transition:.24s ease;
+    }
+
+    .service::before{
+      content:"";
+      position:absolute;
+      left:0;top:0;
+      height:2px;width:100%;
+      background:linear-gradient(90deg,var(--green),transparent 72%);
+      opacity:.7;
+    }
+
+    .service:hover{
+      transform:translateY(-5px);
+      border-color:rgba(182,255,38,.28);
+      background:linear-gradient(180deg,rgba(182,255,38,.055),rgba(255,255,255,.022));
+    }
+
+    .service-icon{
+      width:44px;height:44px;
+      border:1px solid rgba(182,255,38,.22);
+      border-radius:13px;
+      display:grid;place-items:center;
+      color:var(--green);
+      margin-bottom:22px;
+      font-size:1.2rem;
+      background:rgba(182,255,38,.045);
+    }
+
+    .service h3{
+      font-size:.98rem;
+      text-transform:uppercase;
+      letter-spacing:.01em;
+      margin-bottom:13px;
+    }
+
+    .service p{
+      color:var(--muted);
+      font-size:.9rem;
+      line-height:1.6;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .project{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.033);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 22px 70px rgba(0,0,0,.32);
+    }
+
+    .project-visual{
+      height:250px;
+      padding:18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0;
+      background:
+        radial-gradient(circle at 80% 20%,rgba(182,255,38,.11),transparent 28%),
+        linear-gradient(135deg,#0c1110,#040605);
+    }
+
+    .before,.after{
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(255,255,255,.035);
+      padding:18px;
+      overflow:hidden;
+    }
+
+    .before{border-radius:14px 0 0 14px;filter:saturate(.7);opacity:.68}
+    .after{border-radius:0 14px 14px 0;background:radial-gradient(circle at 80% 20%,rgba(182,255,38,.18),transparent 35%),rgba(255,255,255,.045)}
+    .label{font-size:.68rem;color:#aeb7b3;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:22px}
+    .bar{height:15px;border-radius:30px;background:rgba(255,255,255,.18);margin-bottom:10px}.after .bar:first-of-type{background:#fff}.after .bar:nth-of-type(2){background:var(--green)}
+
+    .project-body{padding:24px}
+    .project-body h3{text-transform:uppercase;font-size:1rem;letter-spacing:.02em;margin-bottom:18px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .stats strong{font-size:1.2rem;letter-spacing:-.035em}.stats span{display:block;color:var(--muted);font-size:.72rem;margin-top:5px;line-height:1.35}
+
+
+    .project.real-project{
+      position:relative;
+      isolation:isolate;
+      border-color:rgba(255,255,255,.12);
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+    }
+
+    .project.real-project:hover{
+      transform:translateY(-7px);
+      border-color:rgba(182,255,38,.34);
+      box-shadow:0 34px 95px rgba(0,0,0,.46);
+    }
+
+    .project-cover{
+      height:282px;
+      position:relative;
+      background-size:cover;
+      background-position:center;
+      overflow:hidden;
+      display:flex;
+      align-items:flex-end;
+      padding:22px;
+    }
+
+    .project-cover::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.88)),
+        radial-gradient(circle at 84% 16%,rgba(182,255,38,.20),transparent 34%);
+      z-index:1;
+    }
+
+    .project-cover::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size:42px 42px;
+      opacity:.42;
+      mask-image:linear-gradient(120deg,rgba(0,0,0,.8),transparent 70%);
+      z-index:2;
+    }
+
+    .project-logo-box{
+      position:absolute;
+      left:18px;
+      top:18px;
+      z-index:3;
+      width:130px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(0,0,0,.56);
+      backdrop-filter:blur(14px);
+    }
+
+    .project-logo-box img{
+      display:block;
+      width:100%;
+      height:auto;
+      filter:brightness(1.16) contrast(1.08);
+    }
+
+    .project-tag{
+      position:relative;
+      z-index:4;
+      display:inline-flex;
+      align-items:center;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(182,255,38,.34);
+      background:rgba(182,255,38,.10);
+      color:var(--green);
+      font-size:.72rem;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      backdrop-filter:blur(12px);
+    }
+
+    .person-cover{background-position:center 18%}
+    .person-cover::before{background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.90))}
+
+    .project-desc{
+      color:var(--muted);
+      line-height:1.68;
+      font-size:.92rem;
+      margin:0 0 20px;
+    }
+
+    .project-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .project-link{
+      min-height:39px;
+      padding:0 13px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#dfe8e3;
+      font-size:.74rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      transition:.22s ease;
+    }
+
+    .project-link:hover{
+      border-color:var(--line-2);
+      color:var(--green);
+      transform:translateY(-2px);
+    }
+
+    .project-link.primary-mini{
+      background:rgba(182,255,38,.12);
+      border-color:rgba(182,255,38,.32);
+      color:var(--green);
+    }
+
+    .stack-strip{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:13px;
+      margin-top:22px;
+    }
+
+    .stack-pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:14px;
+      padding:14px;
+      color:var(--muted);
+      font-size:.78rem;
+      font-weight:800;
+    }
+
+    .stack-pill strong{display:block;color:#fff;margin-bottom:4px;font-size:.88rem}
+
+
+
+    .project-link.primary-mini::after{
+      content:"↗";
+      font-size:.9rem;
+      transition:transform .22s ease;
+    }
+
+    .project-link.primary-mini:hover::after{
+      transform:translate(2px,-2px);
+    }
+
+    .project-cover .live-badge{
+      position:absolute;
+      right:18px;
+      top:18px;
+      z-index:4;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.54);
+      color:#fff;
+      font-size:.7rem;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      backdrop-filter:blur(12px);
+    }
+
+    .project-cover .live-badge::before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 18px rgba(182,255,38,.75);
+    }
+
+    .project.real-project .project-cover{
+      transition:filter .28s ease, transform .28s ease;
+    }
+
+    .project.real-project:hover .project-cover{
+      filter:saturate(1.12) contrast(1.06);
+    }
+
+    .project-body h3::after{
+      content:"";
+      display:block;
+      width:42px;
+      height:2px;
+      margin-top:12px;
+      background:linear-gradient(90deg,var(--green),transparent);
+    }
+
+
+
+    .project-brand-mini{
+      position:absolute;
+      left:18px;
+      top:18px;
+      z-index:4;
+      padding:10px 13px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.56);
+      color:#fff;
+      font-size:.78rem;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      backdrop-filter:blur(14px);
+    }
+
+    .project-brand-mini.gold{
+      color:#f2d28c;
+      border-color:rgba(242,210,140,.28);
+      background:rgba(18,10,5,.66);
+    }
+
+    .project-clinic .project-cover::before{
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.88)),
+        radial-gradient(circle at 84% 16%,rgba(86,230,206,.24),transparent 34%);
+    }
+
+    .project-restaurant .project-cover::before{
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.9)),
+        radial-gradient(circle at 84% 16%,rgba(216,167,92,.26),transparent 34%);
+    }
+
+    .project-restaurant .project-link.primary-mini{
+      background:rgba(216,167,92,.13);
+      border-color:rgba(216,167,92,.34);
+      color:#f2d28c;
+    }
+
+    .gold-tag{
+      border-color:rgba(216,167,92,.36);
+      background:rgba(216,167,92,.11);
+      color:#f2d28c;
+    }
+
+    .projects .project:nth-child(1){grid-column:span 1;}
+
+    @media(min-width:1021px){
+      .projects{grid-template-columns:repeat(6,1fr)}
+      .project.real-project{grid-column:span 3}
+      .project.real-project:nth-child(1){grid-column:span 3}
+      .project.real-project:nth-child(2){grid-column:span 3}
+      .project.real-project:nth-child(3){grid-column:span 2}
+      .project.real-project:nth-child(4){grid-column:span 2}
+      .project.real-project:nth-child(5){grid-column:span 2}
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:.83fr 1.17fr;
+      gap:46px;
+      align-items:start;
+    }
+
+    .terminal{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:#050807;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .terminal-top{height:42px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 14px;background:rgba(255,255,255,.035)}
+    .terminal-body{padding:22px;color:#b9c3be;font-size:.88rem;line-height:1.95;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+    .terminal-body span{color:var(--green)}
+
+    .timeline{border-left:1px solid var(--line-2);padding-left:30px}
+    .step{position:relative;padding-bottom:34px}
+    .step:last-child{padding-bottom:0}
+    .step::before{content:"";position:absolute;left:-37px;top:2px;width:13px;height:13px;border-radius:50%;background:var(--green);box-shadow:0 0 30px rgba(182,255,38,.55)}
+    .step h3{font-size:1.22rem;letter-spacing:-.025em;margin-bottom:8px}.step p{color:var(--muted);line-height:1.7}
+
+    .about{
+      border:1px solid var(--line);
+      border-radius:26px;
+      background:linear-gradient(135deg,rgba(182,255,38,.075),rgba(255,255,255,.025));
+      padding:44px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:38px;
+    }
+
+    .quote{font-size:1.9rem;line-height:1.2;letter-spacing:-.052em;font-weight:900}.quote span{color:var(--green)}
+    .about p{color:#c5ceca;line-height:1.85}
+
+    .cta{
+      padding-bottom:70px;
+    }
+
+    .cta-panel{
+      border:1px solid var(--line-2);
+      border-radius:24px;
+      background:
+        radial-gradient(circle at 85% 45%,rgba(182,255,38,.16),transparent 30%),
+        rgba(255,255,255,.032);
+      padding:40px 42px;
+      display:grid;
+      grid-template-columns:1.05fr .7fr auto;
+      gap:30px;
+      align-items:center;
+      box-shadow:0 25px 90px rgba(0,0,0,.38);
+    }
+
+    .cta-panel h2{font-size:2.2rem;line-height:1.08;letter-spacing:-.052em}.cta-panel h2 span{color:var(--green)}
+    .cta-panel p{color:var(--muted);line-height:1.65}
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0;
+      color:var(--muted-2);
+      font-size:.86rem;
+    }
+
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    .float{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:90;
+      width:58px;height:58px;
+      border-radius:16px;
+      background:var(--green);
+      color:#071006;
+      display:grid;
+      place-items:center;
+      font-weight:950;
+      box-shadow:0 24px 70px rgba(182,255,38,.28);
+      transition:.22s ease;
+    }
+
+    .float:hover{transform:translateY(-4px) rotate(4deg)}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:.7s ease}
+    .reveal.show{opacity:1;transform:translateY(0)}
+
+    @media(max-width:1020px){
+      .nav-links{display:none}
+      .hero-grid,.process-grid,.about,.cta-panel{grid-template-columns:1fr}
+      .visual{min-height:auto}.phone{display:none}.code-card{display:none}
+      .services{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.stack-strip{grid-template-columns:1fr 1fr}.section-head{display:block}.subtitle{margin-top:15px}
+    }
+
+    @media(max-width:620px){
+      .container{width:min(100% - 24px,1180px)}
+      .nav{height:68px}.nav-actions{display:none}
+      .hero{padding-top:108px}.hero-actions .btn{width:100%}
+      h1{font-size:3.15rem}.lead{font-size:1rem}
+      .mini-proof,.services,.metrics,.stack-strip{grid-template-columns:1fr}
+      .metric{border-right:0;border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:0}
+      .screen{min-height:310px;padding:22px}.screen-content{max-width:82%}
+      .project-visual{height:220px}.stats{grid-template-columns:1fr}
+      .about,.cta-panel{padding:28px}.float{right:14px;bottom:14px}
+      section{padding:66px 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <script>
+    const whatsappNumber = '5544991212105';
+    const whatsappText = encodeURIComponent('Olá, vi o site da Vyron e quero criar ou melhorar meu site.');
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+  </script>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Vyron">
+        <span class="brand-mark"><i></i><i></i></span>
+        <span>VYRON</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#processo">Processo</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="#projetos">Ver projetos</a>
+        <a class="btn btn-primary js-whatsapp" href="#">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Design · Código · Conversão</div>
+          <h1>Sites premium que posicionam marcas e geram <span>clientes.</span></h1>
+          <p class="lead">Crio landing pages e sites com estética premium, estrutura estratégica e foco em conversão. O objetivo é simples: fazer sua empresa parecer mais forte, confiável e pronta para vender.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary js-whatsapp" href="#">Quero um site melhor →</a>
+            <a class="btn btn-outline" href="#processo">Entender o método</a>
+          </div>
+
+          <div class="mini-proof">
+            <div class="proof-pill"><strong>Visual premium</strong>autoridade imediata</div>
+            <div class="proof-pill"><strong>Mobile-first</strong>experiência perfeita</div>
+            <div class="proof-pill"><strong>Código puro</strong>rápido e leve</div>
+          </div>
+        </div>
+
+        <div class="visual reveal">
+          <div class="visual-glow"></div>
+          <div class="device">
+            <div class="device-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="screen">
+              <div class="screen-content">
+                <div class="mock-logo"></div>
+                <div class="mock-title one"></div>
+                <div class="mock-title two"></div>
+                <div class="mock-line a"></div>
+                <div class="mock-line b"></div>
+                <div class="mock-button"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-card">
+            <div class="code-row"></div>
+            <div class="code-row"></div>
+            <div class="code-row"></div>
+            <div class="code-row"></div>
+          </div>
+
+          <div class="phone">
+            <div class="phone-inner">
+              <div class="phone-line x"></div>
+              <div class="phone-line y"></div>
+              <div class="phone-copy"></div>
+              <div class="phone-copy small"></div>
+              <div class="phone-cta"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container metrics reveal">
+        <div class="metric"><strong>+ autoridade</strong><span>Visual que muda a percepção do cliente.</span></div>
+        <div class="metric"><strong>+ clareza</strong><span>Mensagem direta para a pessoa entender e agir.</span></div>
+        <div class="metric"><strong>+ velocidade</strong><span>Estrutura leve, responsiva e sem peso desnecessário.</span></div>
+        <div class="metric"><strong>+ conversão</strong><span>Botões, fluxo e seções feitos para gerar contato.</span></div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Serviços</div>
+            <h2 class="title">Execução completa para uma presença digital forte.</h2>
+          </div>
+          <p class="subtitle">O foco não é apenas ter um site bonito. É construir uma página que transmita confiança, explique sua oferta e leve o visitante até o contato.</p>
+        </div>
+
+        <div class="services reveal">
+          <div class="service"><div class="service-icon">▱</div><h3>Criação de sites</h3><p>Sites profissionais do zero, com estrutura moderna, visual sério e foco em experiência.</p></div>
+          <div class="service"><div class="service-icon">↻</div><h3>Redesign estratégico</h3><p>Reformulação de sites antigos para elevar autoridade, clareza e valor percebido.</p></div>
+          <div class="service"><div class="service-icon">↗</div><h3>Conversão</h3><p>Textos, botões, hierarquia e fluxo pensados para transformar visita em conversa.</p></div>
+          <div class="service"><div class="service-icon">◴</div><h3>Performance</h3><p>Páginas rápidas, responsivas e leves, funcionando bem no celular e no desktop.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Projetos reais</div>
+            <h2 class="title">Projetos com cara de marca real, construídos para gerar desejo, confiança e conversão.</h2>
+          </div>
+          <p class="subtitle">Uma seleção de projetos jurídicos reais e projetos conceito premium para clínica e restaurante. Cada card abre o site publicado ao vivo, com foco em copy, estética, experiência mobile e conversão.</p>
+        </div>
+
+        <div class="projects reveal">
+          <article class="project real-project">
+            <div class="project-cover" style="background-image:url('img/bg-execucao.jpeg')">
+              <div class="project-logo-box"><img src="img/logo.jpeg" alt="LZO Advogados"></div>
+              <span class="live-badge">Ao vivo</span>
+              <div class="project-tag">Execução Fiscal</div>
+            </div>
+            <div class="project-body">
+              <h3>Defesa em Execução Fiscal</h3>
+              <p class="project-desc">Página construída para captar empresas e pessoas em situação de cobrança fiscal, bloqueio, penhora ou risco patrimonial. A estratégia combina dor clara, autoridade jurídica e CTA direto para WhatsApp.</p>
+              <div class="stats">
+                <div><strong>WhatsApp</strong><span>CTA direto</span></div>
+                <div><strong>Autoridade</strong><span>visual jurídico</span></div>
+                <div><strong>Funil</strong><span>decisão rápida</span></div>
+              </div>
+              <div class="project-links">
+                <a class="project-link primary-mini" href="https://lzoadvogados.com.br/lp/def/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto ao vivo">Ver site ao vivo</a>
+                <a class="project-link" href="#processo">Estratégia</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project real-project">
+            <div class="project-cover" style="background-image:url('img/bg-bem-familia.jpeg')">
+              <div class="project-logo-box"><img src="img/logo.jpeg" alt="LZO Advogados"></div>
+              <span class="live-badge">Ao vivo</span>
+              <div class="project-tag">Bem de Família</div>
+            </div>
+            <div class="project-body">
+              <h3>Impugnação à Penhora</h3>
+              <p class="project-desc">Landing page focada em pessoas com risco de perder o imóvel familiar. O layout reforça urgência, segurança e orientação técnica, conduzindo o visitante para uma análise inicial pelo WhatsApp.</p>
+              <div class="stats">
+                <div><strong>Urgência</strong><span>copy de dor</span></div>
+                <div><strong>Confiança</strong><span>prova técnica</span></div>
+                <div><strong>Leads</strong><span>fluxo claro</span></div>
+              </div>
+              <div class="project-links">
+                <a class="project-link primary-mini" href="https://lzoadvogados.com.br/lp/ibf/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto ao vivo">Ver site ao vivo</a>
+                <a class="project-link" href="#processo">Estratégia</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project real-project">
+            <div class="project-cover" style="background-image:url('img/bg-condominio.jpeg')">
+              <div class="project-logo-box"><img src="img/logo.jpeg" alt="LZO Advogados"></div>
+              <span class="live-badge">Ao vivo</span>
+              <div class="project-tag">Condomínio</div>
+            </div>
+            <div class="project-body">
+              <h3>Defesa em Cobrança de Condomínio</h3>
+              <p class="project-desc">Página para captação de casos envolvendo dívida condominial, revisão de valores, penhora e leilão. O projeto usa narrativa de risco, prova de especialidade e rastreamento de cliques.</p>
+              <div class="stats">
+                <div><strong>Oferta</strong><span>objetiva</span></div>
+                <div><strong>Tracking</strong><span>cliques medidos</span></div>
+                <div><strong>Mobile</strong><span>responsivo</span></div>
+              </div>
+              <div class="project-links">
+                <a class="project-link primary-mini" href="https://lzoadvogados.com.br/lp/dcc/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto ao vivo">Ver site ao vivo</a>
+                <a class="project-link" href="#processo">Estratégia</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project real-project project-clinic">
+            <div class="project-cover" style="background-image:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=80')">
+              <span class="live-badge">Ao vivo</span>
+              <div class="project-brand-mini">Instituto Vitalle</div>
+              <div class="project-tag">Clínica Premium</div>
+            </div>
+            <div class="project-body">
+              <h3>Instituto Vitalle</h3>
+              <p class="project-desc">Site conceito para clínica de saúde, estética e longevidade. O projeto trabalha confiança médica, sofisticação visual, autoridade profissional e agendamento com experiência mobile-first.</p>
+              <div class="stats">
+                <div><strong>Confiança</strong><span>visual clínico</span></div>
+                <div><strong>Agendamento</strong><span>CTA claro</span></div>
+                <div><strong>Premium</strong><span>marca forte</span></div>
+              </div>
+              <div class="project-links">
+                <a class="project-link primary-mini" href="https://instituto-vitalle.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto ao vivo">Ver site ao vivo</a>
+                <a class="project-link" href="#processo">Estratégia</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project real-project project-restaurant">
+            <div class="project-cover" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80')">
+              <span class="live-badge">Ao vivo</span>
+              <div class="project-brand-mini gold">Bistrô Verano</div>
+              <div class="project-tag gold-tag">Restaurante</div>
+            </div>
+            <div class="project-body">
+              <h3>Bistrô Verano</h3>
+              <p class="project-desc">Landing page para restaurante autoral, criada para vender atmosfera, despertar desejo e conduzir o visitante para reserva. Design sensorial, sofisticado e com forte percepção de marca.</p>
+              <div class="stats">
+                <div><strong>Desejo</strong><span>visual sensorial</span></div>
+                <div><strong>Reserva</strong><span>fluxo simples</span></div>
+                <div><strong>Marca</strong><span>alto padrão</span></div>
+              </div>
+              <div class="project-links">
+                <a class="project-link primary-mini" href="https://bistro-verano.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto ao vivo">Ver site ao vivo</a>
+                <a class="project-link" href="#processo">Estratégia</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="stack-strip reveal">
+          <div class="stack-pill"><strong>Jurídico</strong>urgência e autoridade</div>
+          <div class="stack-pill"><strong>Clínica</strong>confiança e agendamento</div>
+          <div class="stack-pill"><strong>Restaurante</strong>desejo e reserva</div>
+          <div class="stack-pill"><strong>Conversão</strong>CTA, WhatsApp e funil</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo">
+      <div class="container process-grid">
+        <div class="reveal">
+          <div class="kicker">Processo</div>
+          <h2 class="title">Método simples, execução limpa e resultado profissional.</h2>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="step"><h3>01 · Diagnóstico</h3><p>Entendo seu negócio, seu público e o que precisa melhorar na percepção digital.</p></div>
+          <div class="step"><h3>02 · Direção visual</h3><p>Defino a estética, a estrutura e a mensagem principal para o site parecer sério e forte.</p></div>
+          <div class="step"><h3>03 · Construção</h3><p>Transformo tudo em código leve, responsivo e pronto para publicar.</p></div>
+          <div class="step"><h3>04 · Conversão</h3><p>Organizo botões, chamadas e fluxo para facilitar o contato pelo WhatsApp.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container process-grid">
+        <div class="terminal reveal">
+          <div class="terminal-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="terminal-body">
+            <div><span>vyron</span> / strategy</div>
+            <div>→ briefing: claro</div>
+            <div>→ layout: premium</div>
+            <div>→ code: clean</div>
+            <div>→ mobile: responsive</div>
+            <div>→ whatsapp: integrated</div>
+            <div><span>status:</span> ready to convert</div>
+          </div>
+        </div>
+
+        <div class="about reveal" id="sobre">
+          <div class="quote">Não é só sobre criar site. É sobre fazer o cliente pensar: <span>essa empresa é séria.</span></div>
+          <p>A Vyron foi pensada para negócios que precisam parecer mais fortes, confiáveis e preparados para vender na internet. A entrega combina estética sofisticada, texto direto, estrutura de conversão e código limpo. O resultado é uma página que não parece improvisada — parece posicionamento.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-panel reveal">
+        <h2>Seu site pode parecer muito mais <span>profissional.</span></h2>
+        <p>Chame no WhatsApp e peça uma análise inicial. Eu te mostro onde seu site pode melhorar e como deixar ele mais forte.</p>
+        <a class="btn btn-primary js-whatsapp" href="#">Chamar agora →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Vyron. Design, código e conversão.</span>
+      <span>Feito em código puro.</span>
+    </div>
+  </footer>
+
+  <a class="float js-whatsapp" href="#" aria-label="Falar no WhatsApp">↗</a>
+
+  <script>
+    document.querySelectorAll('.js-whatsapp').forEach(el=>{
+      el.href=whatsappLink;
+      el.target='_blank';
+      el.rel='noopener noreferrer';
+    });
+
+
+
+    document.querySelectorAll('.project.real-project').forEach(card=>{
+      const mainLink=card.querySelector('.project-link.primary-mini');
+      if(!mainLink) return;
+      card.style.cursor='pointer';
+      card.addEventListener('click',(event)=>{
+        if(event.target.closest('a')) return;
+        window.open(mainLink.href,'_blank','noopener,noreferrer');
+      });
+    });
+
+    const reveals=document.querySelectorAll('.reveal');
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('show')}
+      })
+    },{threshold:.12});
+    reveals.forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
