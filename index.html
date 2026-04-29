@@ -1518,6 +1518,304 @@
       }
     }
 
+  
+    /* =========================================================
+       VYRON FINAL ABSOLUTE HEADER FIX
+       Logo gigante e encaixada no quadrado mesmo quando a imagem tem margem interna.
+    ========================================================= */
+
+    header{
+      background:linear-gradient(180deg,rgba(0,0,0,.88),rgba(1,7,3,.72)) !important;
+      border-bottom:1px solid rgba(182,255,38,.18) !important;
+      box-shadow:0 28px 100px rgba(0,0,0,.48) !important;
+    }
+
+    .nav{
+      height:118px !important;
+      align-items:center !important;
+    }
+
+    .brand-god,
+    .brand-upgraded,
+    .brand{
+      gap:22px !important;
+      align-items:center !important;
+    }
+
+    .brand-logo-shell,
+    .brand-logo-slot{
+      width:112px !important;
+      height:112px !important;
+      min-width:112px !important;
+      flex:0 0 112px !important;
+      padding:0 !important;
+      border-radius:26px !important;
+      overflow:hidden !important;
+      position:relative !important;
+      border:1px solid rgba(182,255,38,.46) !important;
+      background:
+        radial-gradient(circle at 50% 38%,rgba(182,255,38,.24),transparent 46%),
+        linear-gradient(135deg,rgba(182,255,38,.14),rgba(255,255,255,.035)) !important;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.06) inset,
+        0 0 58px rgba(182,255,38,.26),
+        0 26px 90px rgba(0,0,0,.58) !important;
+    }
+
+    .brand-logo-shell::before,
+    .brand-logo-slot::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.13),transparent 36%),
+        radial-gradient(circle at 50% 50%,transparent 42%,rgba(0,0,0,.34) 100%);
+      pointer-events:none;
+      z-index:3;
+    }
+
+    .brand-logo-img{
+      width:100% !important;
+      height:100% !important;
+      padding:0 !important;
+      margin:0 !important;
+      display:block !important;
+      object-fit:cover !important;
+      object-position:center center !important;
+      transform:scale(3.35) translateY(-1px) !important;
+      transform-origin:center center !important;
+      filter:
+        brightness(1.28)
+        contrast(1.18)
+        saturate(1.12)
+        drop-shadow(0 0 22px rgba(182,255,38,.38)) !important;
+      position:relative !important;
+      z-index:2 !important;
+    }
+
+    .brand-word strong,
+    .brand-text strong{
+      font-size:2.42rem !important;
+      line-height:.9 !important;
+      letter-spacing:-.075em !important;
+      color:#fff !important;
+      text-shadow:0 0 26px rgba(255,255,255,.08) !important;
+    }
+
+    .brand-word small,
+    .brand-text small{
+      display:block !important;
+      margin-top:10px !important;
+      color:var(--green) !important;
+      font-size:.72rem !important;
+      letter-spacing:.22em !important;
+      font-weight:950 !important;
+      text-transform:uppercase !important;
+      opacity:.95 !important;
+      text-shadow:0 0 24px rgba(182,255,38,.28) !important;
+    }
+
+    .hero{
+      padding-top:205px !important;
+    }
+
+    .hero::before{
+      top:148px !important;
+    }
+
+    .hero::after{
+      top:160px !important;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#b6ff26,#ecff9a) !important;
+      box-shadow:0 26px 90px rgba(182,255,38,.34), inset 0 1px 0 rgba(255,255,255,.35) !important;
+    }
+
+    .project.real-project{
+      border-color:rgba(255,255,255,.16) !important;
+      box-shadow:0 34px 110px rgba(0,0,0,.42) !important;
+    }
+
+    .project.real-project:hover{
+      border-color:rgba(182,255,38,.48) !important;
+      transform:translateY(-9px) !important;
+    }
+
+    @media(max-width:1020px){
+      .nav{
+        height:108px !important;
+      }
+
+      .brand-logo-shell,
+      .brand-logo-slot{
+        width:100px !important;
+        height:100px !important;
+        min-width:100px !important;
+        flex-basis:100px !important;
+        border-radius:24px !important;
+      }
+
+      .brand-logo-img{
+        transform:scale(3.55) translateY(-1px) !important;
+      }
+
+      .brand-word strong,
+      .brand-text strong{
+        font-size:2.08rem !important;
+      }
+
+      .hero{
+        padding-top:178px !important;
+      }
+    }
+
+    @media(max-width:620px){
+      .container{
+        width:min(100% - 28px,1180px) !important;
+      }
+
+      .nav{
+        height:106px !important;
+      }
+
+      .brand-god,
+      .brand-upgraded,
+      .brand{
+        gap:16px !important;
+      }
+
+      .brand-logo-shell,
+      .brand-logo-slot{
+        width:92px !important;
+        height:92px !important;
+        min-width:92px !important;
+        flex-basis:92px !important;
+        border-radius:24px !important;
+      }
+
+      .brand-logo-img{
+        transform:scale(3.95) translateY(-1px) !important;
+      }
+
+      .brand-word strong,
+      .brand-text strong{
+        font-size:1.75rem !important;
+      }
+
+      .brand-word small,
+      .brand-text small{
+        display:none !important;
+      }
+
+      .hero{
+        padding-top:166px !important;
+      }
+
+      .hero::before{
+        top:128px !important;
+      }
+
+      h1{
+        font-size:3.3rem !important;
+      }
+    }
+
+  
+    /* =========================================================
+       VYRON LOGO BALANCE FIX
+       Logo grande e preenchida, mas sem cortar exagerado.
+    ========================================================= */
+
+    .brand-logo-shell,
+    .brand-logo-slot{
+      width:86px !important;
+      height:86px !important;
+      min-width:86px !important;
+      flex:0 0 86px !important;
+      border-radius:23px !important;
+    }
+
+    .brand-logo-img{
+      transform:scale(2.35) translateY(-1px) !important;
+      object-fit:cover !important;
+      object-position:center center !important;
+      padding:0 !important;
+    }
+
+    .nav{
+      height:98px !important;
+    }
+
+    .brand-word strong,
+    .brand-text strong{
+      font-size:2rem !important;
+    }
+
+    .hero{
+      padding-top:170px !important;
+    }
+
+    .hero::before{
+      top:126px !important;
+    }
+
+    .hero::after{
+      top:138px !important;
+    }
+
+    @media(max-width:1020px){
+      .brand-logo-shell,
+      .brand-logo-slot{
+        width:78px !important;
+        height:78px !important;
+        min-width:78px !important;
+        flex-basis:78px !important;
+        border-radius:21px !important;
+      }
+
+      .brand-logo-img{
+        transform:scale(2.45) translateY(-1px) !important;
+      }
+
+      .brand-word strong,
+      .brand-text strong{
+        font-size:1.75rem !important;
+      }
+
+      .nav{
+        height:92px !important;
+      }
+    }
+
+    @media(max-width:620px){
+      .brand-logo-shell,
+      .brand-logo-slot{
+        width:76px !important;
+        height:76px !important;
+        min-width:76px !important;
+        flex-basis:76px !important;
+        border-radius:21px !important;
+      }
+
+      .brand-logo-img{
+        transform:scale(2.55) translateY(-1px) !important;
+      }
+
+      .brand-word strong,
+      .brand-text strong{
+        font-size:1.62rem !important;
+      }
+
+      .nav{
+        height:92px !important;
+      }
+
+      .hero{
+        padding-top:145px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1866,4 +2164,3 @@
   </script>
 </body>
 </html>
-
