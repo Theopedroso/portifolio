@@ -1996,6 +1996,274 @@
       }
     }
 
+  
+    /* =========================================================
+       VYRON — VERSÃO FINAL DE DIVULGAÇÃO
+       Corrige definitivamente a logo e deixa o visual mais premium.
+       Use a logo otimizada em: img/vyron-logo.PNG
+    ========================================================= */
+
+    :root{
+      --vyron-glow:rgba(182,255,38,.28);
+      --vyron-glass:rgba(255,255,255,.055);
+    }
+
+    header{
+      background:linear-gradient(180deg,rgba(0,0,0,.88),rgba(1,7,3,.74)) !important;
+      border-bottom:1px solid rgba(182,255,38,.16) !important;
+      box-shadow:0 22px 90px rgba(0,0,0,.42) !important;
+    }
+
+    .nav{
+      height:84px !important;
+      align-items:center !important;
+    }
+
+    .brand,
+    .brand-god,
+    .brand-upgraded{
+      gap:15px !important;
+      align-items:center !important;
+      letter-spacing:0 !important;
+    }
+
+    .brand-logo-shell,
+    .brand-logo-slot{
+      width:58px !important;
+      height:58px !important;
+      min-width:58px !important;
+      flex:0 0 58px !important;
+      padding:0 !important;
+      border-radius:17px !important;
+      overflow:hidden !important;
+      position:relative !important;
+      display:grid !important;
+      place-items:center !important;
+      border:1px solid rgba(182,255,38,.34) !important;
+      background:
+        radial-gradient(circle at 50% 42%,rgba(182,255,38,.20),transparent 50%),
+        linear-gradient(135deg,rgba(182,255,38,.11),rgba(255,255,255,.025)) !important;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.045) inset,
+        0 0 26px rgba(182,255,38,.18),
+        0 14px 46px rgba(0,0,0,.42) !important;
+    }
+
+    .brand-logo-shell::before,
+    .brand-logo-slot::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:3;
+      pointer-events:none;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.12),transparent 40%),
+        radial-gradient(circle at center,transparent 48%,rgba(0,0,0,.28) 100%);
+    }
+
+    .brand-logo-img{
+      width:100% !important;
+      height:100% !important;
+      padding:0 !important;
+      margin:0 !important;
+      display:block !important;
+      object-fit:cover !important;
+      object-position:center center !important;
+      transform:scale(1.04) !important;
+      transform-origin:center center !important;
+      filter:
+        brightness(1.18)
+        contrast(1.10)
+        saturate(1.08)
+        drop-shadow(0 0 10px rgba(182,255,38,.20)) !important;
+      position:relative !important;
+      z-index:2 !important;
+    }
+
+    .fallback-v{
+      width:38px !important;
+      height:38px !important;
+      border-radius:12px !important;
+      display:none;
+      place-items:center;
+      background:linear-gradient(135deg,var(--green),#e8ff97) !important;
+      color:#071006 !important;
+      font-size:1.35rem !important;
+      font-weight:950 !important;
+      position:relative;
+      z-index:4;
+    }
+
+    .fallback-logo .fallback-v{display:grid !important;}
+
+    .brand-word,
+    .brand-text{
+      display:flex !important;
+      flex-direction:column !important;
+      line-height:.92 !important;
+    }
+
+    .brand-word strong,
+    .brand-text strong{
+      color:#fff !important;
+      font-size:1.72rem !important;
+      line-height:.92 !important;
+      letter-spacing:-.055em !important;
+      font-weight:950 !important;
+      text-shadow:0 0 24px rgba(255,255,255,.08) !important;
+    }
+
+    .brand-word small,
+    .brand-text small{
+      margin-top:7px !important;
+      color:var(--green) !important;
+      font-size:.56rem !important;
+      letter-spacing:.18em !important;
+      text-transform:uppercase !important;
+      font-weight:950 !important;
+      opacity:.86 !important;
+    }
+
+    .hero{
+      padding-top:132px !important;
+      background:
+        radial-gradient(circle at 80% 12%,rgba(182,255,38,.16),transparent 24%),
+        radial-gradient(circle at 18% 10%,rgba(255,255,255,.055),transparent 18%),
+        linear-gradient(180deg,rgba(2,4,3,.02),rgba(2,4,3,0)) !important;
+    }
+
+    .hero::before{
+      top:100px !important;
+      opacity:.85 !important;
+    }
+
+    .hero::after{
+      top:108px !important;
+      color:rgba(255,255,255,.024) !important;
+    }
+
+    h1 span{
+      background:linear-gradient(135deg,var(--green),#f2ffb3) !important;
+      -webkit-background-clip:text !important;
+      color:transparent !important;
+      text-shadow:none !important;
+    }
+
+    .lead{color:#d2dbd6 !important;}
+
+    .btn-primary{
+      background:linear-gradient(135deg,#b6ff26,#ecff9a) !important;
+      box-shadow:0 24px 82px rgba(182,255,38,.30), inset 0 1px 0 rgba(255,255,255,.34) !important;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px) !important;
+      box-shadow:0 34px 100px rgba(182,255,38,.42), inset 0 1px 0 rgba(255,255,255,.36) !important;
+    }
+
+    .btn-outline{
+      background:rgba(255,255,255,.045) !important;
+      backdrop-filter:blur(14px) !important;
+    }
+
+    .proof-pill,
+    .service,
+    .stack-pill,
+    .project.real-project,
+    .cta-panel{
+      backdrop-filter:blur(16px) !important;
+    }
+
+    .project.real-project{
+      border-color:rgba(255,255,255,.145) !important;
+      box-shadow:0 30px 95px rgba(0,0,0,.36) !important;
+    }
+
+    .project.real-project:hover{
+      transform:translateY(-8px) !important;
+      border-color:rgba(182,255,38,.40) !important;
+      box-shadow:0 40px 120px rgba(0,0,0,.48) !important;
+    }
+
+    .command-center{
+      border-color:rgba(182,255,38,.18) !important;
+      box-shadow:0 46px 140px rgba(0,0,0,.66) !important;
+    }
+
+    .float{
+      box-shadow:0 26px 82px rgba(182,255,38,.34) !important;
+    }
+
+    @media(max-width:1020px){
+      .nav{height:80px !important;}
+
+      .brand-logo-shell,
+      .brand-logo-slot{
+        width:56px !important;
+        height:56px !important;
+        min-width:56px !important;
+        flex-basis:56px !important;
+        border-radius:16px !important;
+      }
+
+      .brand-logo-img{
+        transform:scale(1.05) !important;
+      }
+
+      .brand-word strong,
+      .brand-text strong{
+        font-size:1.55rem !important;
+      }
+
+      .hero{padding-top:122px !important;}
+    }
+
+    @media(max-width:620px){
+      .container{width:min(100% - 28px,1180px) !important;}
+      .nav{height:78px !important;}
+
+      .brand,
+      .brand-god,
+      .brand-upgraded{
+        gap:12px !important;
+      }
+
+      .brand-logo-shell,
+      .brand-logo-slot{
+        width:52px !important;
+        height:52px !important;
+        min-width:52px !important;
+        flex-basis:52px !important;
+        border-radius:15px !important;
+      }
+
+      .brand-logo-img{
+        object-fit:cover !important;
+        transform:scale(1.08) !important;
+      }
+
+      .brand-word strong,
+      .brand-text strong{
+        font-size:1.34rem !important;
+        letter-spacing:-.05em !important;
+      }
+
+      .brand-word small,
+      .brand-text small{display:none !important;}
+
+      .hero{
+        padding-top:112px !important;
+      }
+
+      .hero::before{top:88px !important;}
+      .hero::after{top:98px !important;}
+
+      h1{
+        font-size:3.05rem !important;
+        letter-spacing:-.082em !important;
+      }
+    }
+
   </style>
 </head>
 <body>
